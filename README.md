@@ -14,9 +14,8 @@ This project demonstrates the full setup of a cloud-hosted dynamic landing page 
 ---
 
 ## 📂 File Structure
-
-ALT-EXAM/
 ├── index.html # Main web page
-├── css/
-│ └── style.css # Custom responsive styling
+├── css
 ├── README.md # Project documentation
+
+
