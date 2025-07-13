@@ -39,6 +39,7 @@ chmod 400 your-key.pem
 ssh -i "your-key.pem" ubuntu@your-ec2-public-ip
 
 ### 3️⃣ Install and Configure Nginx
+
 bash
 sudo apt update && sudo apt install nginx -y
 sudo ufw allow 'Nginx Full'
