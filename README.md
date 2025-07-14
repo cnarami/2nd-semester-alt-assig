@@ -87,51 +87,7 @@ ALT-EXAM/
 chmod 400 christian-key.pem
 ssh -i "christian-key.pem" ubuntu@your-ec2-public-ip
 
-## 3️⃣ Update Server and Install Nginx
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install nginx -y
-sudo ufw allow 'Nginx Full'
-✅ Visit: http://your-ec2-public-ip to confirm the Nginx welcome page appears.
-
-## 4️⃣ Upload Your Project Files
-Option A — Using Git
-sudo apt install git -y
-git clone https://github.com/ChristianNarami/ALT-EXAM.git
-sudo cp -r ALT-EXAM/* /var/www/html/
-sudo rm /var/www/html/index.nginx-debian.html
-Option B — Using SCP from your local machine
-
-scp -i christian-key.pem -r * ubuntu@your-ec2-public-ip:/tmp/
-ssh ubuntu@your-ec2-public-ip
-sudo mv /tmp/index.html /tmp/css /var/www/html/
-### 5️⃣ Restart Nginx
-sudo systemctl restart nginx
-✅ Now visit: http://your-ec2-public-ip
-You should see your deployed site!
-
-### 6️⃣ (Optional) Add HTTPS with Certbot
-If you have a custom domain connected via Route53 or other DNS provider:
-
-
-sudo apt install certbot python3-certbot-nginx -y
-sudo certbot --nginx -d yourdomain.com
-sudo systemctl enable certbot.timer
-📸 Screenshot
-Replace this with your screenshot after deployment
-
-
-![Landing Page]
-✅ Project Summary
-🚀 Built a clean and responsive static web landing page
-
-⚙️ Provisioned and secured an Ubuntu cloud server (EC2)
-
-🌐 Deployed using Nginx as a production-grade web server
-
-📡  Set up HTTPS with Let’s Encrypt & Certbot
-
-🧠 Demonstrated proficiency in Linux, Git, web hosting, and infrastructure setup
 
 
 
