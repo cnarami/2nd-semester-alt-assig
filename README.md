@@ -35,7 +35,7 @@ A responsive, cloud-hosted landing page that showcases a vision for expanding le
 ## 🌍 Public Access
 
 - **Public IP:** http://your-ec2-public-ip  
-- **(Optional)** Custom Domain: http://christian.yourdomain.com
+- **(Optional)**
 
 ---
 
@@ -72,8 +72,8 @@ ALT-EXAM/
 
 ### 1️⃣ Provision EC2 Instance
 
-- Launch **Ubuntu 22.04** on a `t2.micro` instance (Free Tier).
-- Create a new SSH key pair (`christian-key.pem`).
+- Launch **Ubuntu 22.04** on a `t2.micro` instance
+- Create a new SSH key pair 
 - Set inbound rules in the security group to allow:
   - Port `22` (SSH)
   - Port `80` (HTTP)
@@ -87,7 +87,12 @@ ALT-EXAM/
 chmod 400 christian-key.pem
 ssh -i "christian-key.pem" ubuntu@your-ec2-public-ip
 
-
+---
+### 3️⃣ Update Server and Install Nginx
+bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install nginx -y
+sudo ufw allow 'Nginx Full'
 
 
 
