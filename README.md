@@ -20,43 +20,64 @@ This project showcases how cloud infrastructure can be used to deliver accessibl
 The project was built with semantic HTML and responsive CSS, hosted on an AWS EC2 server, and served using Nginx.
 
 ---
-
-## 🗃️ Project Structure
-
-ALT-EXAM/
-├── index.html # Main landing page
-├── css/
-│ └── style.css # Styling for the page
-├── screenshot.png # Preview of deployed site (optional)
-└── README.md # Documentation
-
-yaml
+OPY THIS INTO README.md:
+markdown
 Copy
 Edit
+# 🌐 AltSchool Cloud Engineering Exam Project — Christian Narami
+
+**Project Title:** *The Future of Community-Based Legal Access*
+
+A responsive, cloud-hosted landing page that showcases a vision for expanding legal support through localized technology. This project demonstrates cloud engineering fundamentals: provisioning an Ubuntu server, configuring a web server (Nginx), and deploying static web content.
 
 ---
 
-## 👨‍💻 Technologies Used
+## 🌍 Public Access
 
-- HTML5
-- CSS3 (responsive layout)
-- Linux (Ubuntu 22.04)
-- AWS EC2 (Virtual Server)
-- Nginx (Web Server)
-- Git & GitHub (Version Control)
+- **Public IP:** http://your-ec2-public-ip  
+- **(Optional)** Custom Domain: http://christian.yourdomain.com
+
+---
+
+## 🛠️ Project Overview
+
+This project delivers a static HTML/CSS-based landing page hosted on an EC2 server. It emphasizes how grassroots legal assistance — supported by accessible cloud infrastructure — can close the justice gap for underserved communities.
+
+Built with semantic HTML and responsive CSS, the website is deployed via Nginx on an Ubuntu server hosted by AWS EC2.
+
+---
+
+## 📁 Project Structure
+
+ALT-EXAM/
+├── index.html # Main landing page content
+├── css/
+│ └── style.css # Custom styling
+├── screenshot.png # (Optional) Preview of deployed site
+└── README.md # Project documentation
+
+---
+
+## 👨‍💻 Tech Stack
+
+- HTML5 & CSS3
+- Ubuntu 22.04 (Linux)
+- Nginx Web Server
+- AWS EC2 (t2.micro instance)
+- Git & GitHub
 
 ---
 
 ## 🚀 Step-by-Step Deployment Workflow
 
-### 1️⃣ Provision an EC2 Server on AWS
+### 1️⃣ Provision EC2 Instance
 
-- Launched a **t2.micro** instance with **Ubuntu 22.04 LTS**
-- Created and downloaded a new SSH key pair (`.pem`)
-- Opened the following ports in the security group:
-  - `22` (SSH)
-  - `80` (HTTP)
-  - `443` (HTTPS - optional)
+- Launch **Ubuntu 22.04** on a `t2.micro` instance (Free Tier).
+- Create a new SSH key pair (`christian-key.pem`).
+- Set inbound rules in the security group to allow:
+  - Port `22` (SSH)
+  - Port `80` (HTTP)
+  - Port `443` (HTTPS - optional)
 
 ---
 
@@ -65,50 +86,52 @@ Edit
 ```bash
 chmod 400 christian-key.pem
 ssh -i "christian-key.pem" ubuntu@your-ec2-public-ip
-3️⃣ Update Server and Install Nginx
-bash
-Copy
-Edit
+
+### 3️⃣ Update Server and Install Nginx
+
 sudo apt update && sudo apt upgrade -y
 sudo apt install nginx -y
 sudo ufw allow 'Nginx Full'
-Visit your public IP:
-http://your-ec2-public-ip
-✅ You should see the Nginx welcome page.
+✅ Visit: http://your-ec2-public-ip to confirm the Nginx welcome page appears.
 
-4️⃣ Upload Your Project Files
-Option A: Use Git
-
-bash
-Copy
-Edit
+### 4️⃣ Upload Your Project Files
+Option A — Using Git
 sudo apt install git -y
 git clone https://github.com/ChristianNarami/ALT-EXAM.git
 sudo cp -r ALT-EXAM/* /var/www/html/
 sudo rm /var/www/html/index.nginx-debian.html
-Option B: Use SCP
+Option B — Using SCP from your local machine
 
-bash
-Copy
-Edit
 scp -i christian-key.pem -r * ubuntu@your-ec2-public-ip:/tmp/
 ssh ubuntu@your-ec2-public-ip
 sudo mv /tmp/index.html /tmp/css /var/www/html/
-5️⃣ Restart Nginx to Serve the Site
-bash
-Copy
-Edit
+### 5️⃣ Restart Nginx
 sudo systemctl restart nginx
-Now visiting http://your-ec2-public-ip will show your custom site.
+✅ Now visit: http://your-ec2-public-ip
+You should see your deployed site!
 
-6️⃣ (Optional) Add HTTPS with Certbot
-If using a custom domain:
+### 6️⃣ (Optional) Add HTTPS with Certbot
+If you have a custom domain connected via Route53 or other DNS provider:
 
-bash
-Copy
-Edit
+
 sudo apt install certbot python3-certbot-nginx -y
 sudo certbot --nginx -d yourdomain.com
 sudo systemctl enable certbot.timer
+📸 Screenshot
+Replace this with your screenshot after deployment
+
+
+![Landing Page]
+✅ Project Summary
+🚀 Built a clean and responsive static web landing page
+
+⚙️ Provisioned and secured an Ubuntu cloud server (EC2)
+
+🌐 Deployed using Nginx as a production-grade web server
+
+📡  Set up HTTPS with Let’s Encrypt & Certbot
+
+🧠 Demonstrated proficiency in Linux, Git, web hosting, and infrastructure setup
+
 
 
