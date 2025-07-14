@@ -6,36 +6,11 @@ A static web landing page deployed using Ubuntu, Nginx, and AWS EC2 to demonstra
 
 ---
 
-## 🌍 Public Access
-
-- **Public IP:** http://your-ec2-public-ip
-- **Custom Domain:**
-
----
-
-## 🛠️ Project Overview
-
-This project showcases how cloud infrastructure can be used to deliver accessible digital content. The website explores how legal services can be extended to underserved communities through technology and community-driven support.
-
-The project was built with semantic HTML and responsive CSS, hosted on an AWS EC2 server, and served using Nginx.
-
----
-OPY THIS INTO README.md:
-markdown
-Copy
-Edit
-# 🌐 AltSchool Cloud Engineering Exam Project 
-
-**Project Title:** *The Future of Community-Based Legal Access*
-
-A responsive, cloud-hosted landing page that showcases a vision for expanding legal support through localized technology. This project demonstrates cloud engineering fundamentals: provisioning an Ubuntu server, configuring a web server (Nginx), and deploying static web content.
-
----
 
 ## 🌍 Public Access
 
-- **Public IP:** http://your-ec2-public-ip  
-- **(Optional)**
+- **Public IP:** http://3.94.57.49 
+- **(Optional)**  workfgs.crabdance.com
 
 ---
 
@@ -84,12 +59,11 @@ ALT-EXAM/
 ### 2️⃣ Connect to EC2 via SSH
 
 ```bash
-chmod 400 christian-key.pem
-ssh -i "christian-key.pem" ubuntu@your-ec2-public-ip
+chmod 400 -key.pem
+ssh -i "key.pem" ubuntu@your-ec2-public-ip
 
 ---
-### 3️⃣ Update Server and Install Nginx
-bash
+
 sudo apt update && sudo apt upgrade -y
 sudo apt install nginx -y
 sudo ufw allow 'Nginx Full'
