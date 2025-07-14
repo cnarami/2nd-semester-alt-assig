@@ -9,7 +9,7 @@ A static web landing page deployed using Ubuntu, Nginx, and AWS EC2 to demonstra
 ## 🌍 Public Access
 
 - **Public IP:** http://your-ec2-public-ip
-- **Custom Domain:** (Optional) e.g. http://christian.osinachi.site
+- **Custom Domain:**
 
 ---
 
@@ -24,7 +24,7 @@ OPY THIS INTO README.md:
 markdown
 Copy
 Edit
-# 🌐 AltSchool Cloud Engineering Exam Project — Christian Narami
+# 🌐 AltSchool Cloud Engineering Exam Project 
 
 **Project Title:** *The Future of Community-Based Legal Access*
 
@@ -87,14 +87,14 @@ ALT-EXAM/
 chmod 400 christian-key.pem
 ssh -i "christian-key.pem" ubuntu@your-ec2-public-ip
 
-### 3️⃣ Update Server and Install Nginx
+## 3️⃣ Update Server and Install Nginx
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install nginx -y
 sudo ufw allow 'Nginx Full'
 ✅ Visit: http://your-ec2-public-ip to confirm the Nginx welcome page appears.
 
-### 4️⃣ Upload Your Project Files
+## 4️⃣ Upload Your Project Files
 Option A — Using Git
 sudo apt install git -y
 git clone https://github.com/ChristianNarami/ALT-EXAM.git
