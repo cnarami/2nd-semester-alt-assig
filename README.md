@@ -10,7 +10,7 @@ A static web landing page deployed using Ubuntu, Nginx, and AWS EC2 to demonstra
 ## 🌍 Public Access
 
 - **Public IP:** http://3.94.57.49 
-- **(Optional)**  workfgs.crabdance.com
+- **Website:**  workfgs.crabdance.com
 
 ---
 
