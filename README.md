@@ -62,11 +62,7 @@ ALT-EXAM/
 chmod 400 -key.pem
 ssh -i "key.pem" ubuntu@your-ec2-public-ip
 
----
-
-sudo apt update && sudo apt upgrade -y
-sudo apt install nginx -y
-sudo ufw allow 'Nginx Full'
+--
 
 
 
